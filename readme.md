@@ -51,7 +51,7 @@ No purchases required; special-purpose software provided through Brightspace or
 
 For this course, you should expect to complete between 15 - 20 hours worth of coursework each week.
 
-Each week will begin on a Friday and end on the Sunday of the following weekend. Assignments will be due each Sunday (at 11:55p). 
+Each week will begin on Friday and end on the Sunday of the following weekend. Assignments will be due each Sunday (at 11:55p). 
 
 ### Readings
 
