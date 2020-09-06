@@ -29,6 +29,6 @@ O'Reilly Safari is an online service provided by URI that gives you access to th
 
 > Note: You can download the O'Reilly Safari app for iOS or Android devices so you can catch up on your homework this semester on the go!
 
-Once you are in O'Reilly Safari, simply search for our textbook *CompTIA Security+ All-in-One Exam Guide, Fifth Edition (Exam SY0-501), 5th Edition* in the search bar. Once you find it you can bookmark it or add it to a playlist for a quick and easy find next time.
+Once you are in O'Reilly Safari, simply search for our textbook *CompTIA Network+ Certification All-in-One Exam Guide, Seventh Edition (Exam N10-007)* in the search bar. Once you find it you can bookmark it or add it to a playlist for a quick and easy find next time.
 
 That's all for A00! Nothing to submit on Sakai for this assignment ~ it's ungraded. However, these two tools will make your life a lot easer this semester, so get to know them well!
