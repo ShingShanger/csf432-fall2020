@@ -12,10 +12,11 @@
 
 ## Lecture Videos
 
-**[Week 00]()** - 20 minutes, 28 seconds
+**[Week 00](https://myvideo.uri.edu/Mediasite/Play/3f0f56c5bf2d463ea1deb3c1a8deb8381d)** - 8 minutes, 03 seconds
 
 
 ## Lecture Slides
 
 **[Lecture Review Slides](week00-lecture-notes.pdf)**
+
 
