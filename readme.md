@@ -4,13 +4,13 @@
 ### Course Instructor
 **Instructor:** Michael Conti (michaelconti@uri.edu)
 
-**Teaching Assistants:** Nick Carchedi, Jack Edgar (uri.csf432@gmail.com) <br>
+**Teaching Assistants:** Nick Carchedi, Nicholas Mccaffery (uri.csf432@gmail.com) <br>
 
 | Day | Staff Member |  Time |
 | --- | --- | --- |
-|Monday |   Jack |   10:00a – 11:00a  |
-|Tuesday |  Nick|   10:00a – 11:00a |
-|Thursday   |  Michael | 11:00a - 12:00p |
+|Monday |   Nick M. |   TBD  |
+|Tuesday |  Nick C. |   TBD |
+|Thursday   |  Michael | TBD|
 
 **Course Meets**: online, asynchronous
 
