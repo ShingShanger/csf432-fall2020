@@ -9,7 +9,7 @@
 ## Lecture Reading
 
 **[Networking Basics](https://scalac.io/networking-basics/)** - Website <br>
-Network+ Certification 7th Edition - Chapter 4: Ethernet
+Network+ Certification 7th Edition - Chapter 3: Ethernet Basics
 
 ## Lecture Videos
 
