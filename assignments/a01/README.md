@@ -49,7 +49,7 @@ The table of contents for this lab is found below.
 
 ## Part 2: Common Ports
 
-:interrobang: Question 11 - For each of the following services/applications, provide the port number and a once sentence description of that that service does.
+:interrobang: Question 11 - For each of the following services/applications, provide the port number and a one sentence description of that that service does.
 
 *Example:* <br>
 **Telnet - Telecommunication Network** <br>
