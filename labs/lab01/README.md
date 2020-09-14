@@ -19,7 +19,7 @@ The table of contents for this lab is found below.
 
 ## Part 1: Installing VMWare (10pts)
 
-**Step 1.1.** Log into Brightspace and navigate to `Lab#01` (Assignments > Lab#01). There you should see the link `VMware Store` under the assignment instructions section. Click on that link to navigate to the VMware store. It's here you'll be able to download VMware workstation (windows) or VMware Fusion (macOS).
+**Step 1.1.** Log into Brightspace and navigate to `Lab#01` (Assignments > Lab#01). There you should see the link `VMware Store` under the assignment instructions section. Click on that link to navigate to the VMware store. It's here you'll be able to download VMware workstation (windows) or VMware Fusion (macOS). **If on a winds machine, please use VMWare Workstation 14** not **VMWare Workstation 15**
 
 **Step 1.2.** At this point you should have successfully logged into the VMware store, downloaded the VMware version that relates to your OS, and installed VMware on your host machine.
 
