@@ -10,7 +10,7 @@
 | --- | --- | --- |
 |Monday |   Nick C. |   TBD  |
 |Tuesday |  Nick M. |   2p - 3p |
-|Wednesdau |  Michael | 12p - 1p|
+|Wednesday |  Michael | 12p - 1p|
 
 **Course Meets**: online, asynchronous
 
