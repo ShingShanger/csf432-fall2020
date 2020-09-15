@@ -8,9 +8,9 @@
 
 | Day | Staff Member |  Time |
 | --- | --- | --- |
-|Monday |   Nick M. |   TBD  |
-|Tuesday |  Nick C. |   TBD |
-|Thursday   |  Michael | TBD|
+|Monday |   Nick C. |   TBD  |
+|Tuesday |  Nick M. |   2p - 3p |
+|Wednesdau |  Michael | 12p - 1p|
 
 **Course Meets**: online, asynchronous
 
