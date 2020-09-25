@@ -100,7 +100,7 @@ Our goal is to install Wireshark on your machine so you can capture network traf
 :interrobang: Question 7 -  Submit a screenshot of your Wireshark capture window. <br>
 :interrobang: Question 8 -  Considering all of the current traffic that Wireshark has recorded, what is the most common protocol listed under the `Protocol` column? <br>
 
-**Step 3.6** Read through the text in the `Router Solicitation` column. 
+**Step 3.6** Read through the text in the `Info` column. 
 
 :interrobang: Question 9 -  In your own words, describe what happened once you started the network <br>
 
