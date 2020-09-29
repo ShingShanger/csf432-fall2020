@@ -67,6 +67,7 @@ In addition to the textbook readings, there may be other readings or videos tha
 Each week there will be a quiz that tests your knowledge and understanding of the topics and concepts covered that week.
 
 * You are not permitted to get help from other students when completing quizzes.
+* Two lowest quiz grades will be dropped from quiz average
 
 ### Exams
 
