@@ -162,7 +162,7 @@ Starting with GNS3 2.0, the NAT node became available. This node allows you to c
 **Step 4.1** Create a new GNS3 Lab4-NAT project. <br> 
 **Step 4.2** Drag and drop your network devices to recreate the topology below. <br>
 
-<img src="images/fig2.png">
+<img src="images/fig2.png" width="700px">
 
 **Step 4.3** Start your topology up by clicking the start button.<br>
 **Step 4.4** Console and log into your VyOS router and run the below commands: <br>
