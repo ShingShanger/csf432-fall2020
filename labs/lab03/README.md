@@ -25,7 +25,7 @@ Last week we took a look at a network topology in our lecture and in A02. A summ
 **Step 1.1** Launch your GNS3 app and VM. <br>
 **Step 1.2** Create a new project `lab03`.<br>
 **Step 1.3** Download the [VyOS router .IOS file](https://drive.google.com/uc?export=download&id=1Gp60ADYR0OalUlEM8l7Nrsawrgifkizx). <br>
-**Step 1.4** Download the [VyOS router empty8G qcow2 file](https://github.com/mikeconti/csf432-master/raw/master/labs/lab03/files/empty8G.qcow2). <br>
+**Step 1.4** Download the [VyOS router empty8G qcow2 file](https://github.com/mikeconti/csf432-fall2020/raw/master/labs/lab03/files/empty8G.qcow2 ). <br>
 **Step 1.5** Click the router icon in GNS3 and select new template. <br>
 
 <img src="images/fig2.png"> 
