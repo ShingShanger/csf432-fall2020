@@ -17,7 +17,7 @@ No of videos : 7 <br>
 Average length of video : 9 minutes, 1 second<br>
 Total length of playlist : 1 hour, 3 minutes, 10 seconds<br>
 
-**[Week 04 Lecture Review]()** - 20 minutes, 28 seconds
+**[Week 04 Lecture Review]()** - 08 minutes, 20 seconds
 
 
 ## Lecture Slides
