@@ -294,6 +294,14 @@ configure
 # commit
 # save
 ```
+At this point Sam is able to send packets to router Router#02, bur Router#02 is dropping those packets because it doesn't know how to send them back. Open router#02's console and set up the return path for those packets with the below command:
+
+```text
+# set protocols static route 10.10.10.0/24 next-hop 10.10.40.1
+# commit
+# save
+```
+
 > **Q:** What did the terminal commands in **Step 4.6** do? <br>
   **A:** Because Router#01 is directly connected to the subnets 10.10.10.0/24, 10.10.40.0/24, and 10.10.40.0/24 (as seen in the routing table in **Step 4.4**), we know that these networks are visible to Router#01. The first command we ran `set protocols static route 10.10.20.0/24 next-hop 10.10.40.2` in a natural language is saying **"Another subnet with the ID 10.10.20.0/24 exists on this network. If your packet is trying to get there, the next destination for that packet is going to be interface 10.10.40.2"**. If Sam were to ping Jack, the destination address would be 10.10.20.2/24. Inspecting Jacks address we see the subnet Jacks computer sits on is 10.10.20.0. Router#01 would inspect Sam's ping request, notice it's trying to get to a device on subnet 10.10.20.0, look at it's routing table, and send that pack to interface 10.10.40.2 (eth0 on Router#02). The second command is doing the same exact thing but for subnet 10.10.30.0/24 and sending all packets to interface 10.10.50.2 (eth0 on Router#03). Commit and save ensure these settings are saved.
 
