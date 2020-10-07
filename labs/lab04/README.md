@@ -161,7 +161,7 @@ Starting with GNS3 2.0, the NAT node became available. This node allows you to c
 
 **Step 4.1** Create a new GNS3 Lab4-NAT project. 
 
-> :warning: Place your NAT node on your local host instead of your GNS3 VM. Depending on your security settings, you host machine could block GNS3 Network connectivity.<br> 
+> :warning: Place your NAT node on your local host instead of your GNS3 VM. Depending on your security settings, you host machine could block GNS3 network connectivity if placed on the GNS3 VM. <br> 
 
 **Step 4.2** Drag and drop your network devices to recreate the topology below. <br>
 
