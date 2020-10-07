@@ -155,9 +155,12 @@ At this point, your DHCP server should have assigned all of your workstations IP
 
 ## Part 4: Using the GNS3 NAT Node
 
-Starting with GNS3 2.0, the NAT and Cloud nodes became available. The Internet node was deprecated in favor of this node, and the Cloud node.
+Starting with GNS3 2.0, the NAT node became available. This node allows you to connect a topology to internet via NAT. The Internet node was deprecated in favor of this node, and the Cloud node.
 
-**Step 4.1** Create a new GNS3 Lab4-Cloud project. <br> 
+> Your topology will not be directly accessible from the internet or local LAN, when using the NAT node. If that is required, then the Cloud node should be used. It’s useful when you need to download things from the internet.
+
+**Step 4.1** Create a new GNS3 Lab4-NAT project. :warning: Place your NAT node on your local host instead of your GNS3 VM. <br> 
+
 **Step 4.2** Drag and drop your network devices to recreate the topology below. <br>
 
 <img src="images/fig2.png" width="700px">
