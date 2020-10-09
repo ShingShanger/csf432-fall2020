@@ -123,7 +123,7 @@ You should see that each PC has been assigned an IP address in the range 172.16.
 :interrobang: Question 6 - Submit a screenshot of PC2's `show ip` report. <br>
 :interrobang: Question 7 - Submit a screenshot of PC3's `show ip` report. <br>
 
-## Part 2: Configuring DHCP - Self-Guided
+## Part 3: Configuring DHCP - Self-Guided
 
 **Step 3.1** Open PC4's console and run the below command:
 
