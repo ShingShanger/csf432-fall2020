@@ -224,7 +224,7 @@ Let's just do a quick sanity check to make sure that our setup in part 3 was suc
 
 You should have connectivity between Router 3 and interface 10.0.20.1. This ping confirms that the OSPF configuration is working and that you can reach a remote network.
 
-:interrobang: Question 8 - Submit a screenshot of Router 3's successful ping response to address `10.0.2.1`.
+:interrobang: Question 8 - Submit a screenshot of Router 3's successful ping response to address `10.0.20.1`.
 
 ## Part 5: Submission 
 
