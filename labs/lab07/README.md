@@ -19,11 +19,15 @@ The table of contents for this lab is found below.
 
 This week, we discussed the importance of the cabling that our networks are made up of. In this lab, we'll take a closer look at how we can aggregate the throughput of two unique cables into one using `Link Aggregation Control Protocol (LACP)`. We've also taken a theoretical look at `Network Address Translation (NAT)` in previous lectures, so in this lab we'll actually be implementing NAT services in our topology.
 
+
+
 In this lab we'll be merging a few of the skills that we've practiced over the past few weeks. I'm going to omit the nitty-gritty, step-by-step details of things we've already done because you (should) know how to do them by now. So, the next few steps high level instructions. Of course, when we get to new commands that you haven't seen yet in this class I'll provide step-by-step instruction.
 
 First, lets start by setting up our topology.
 
 **Step 1.1** Drag and drop your network devices to recreate the topology below.
+
+:warning: Be sure to save save the state of your VyOS VM's on shutdown (right click > On close: save the VM state).
 
 <img src="images/fig1.png" width="900px">
 
@@ -306,6 +310,8 @@ You should see ICMP ping request/reply packets, but the source address of should
 You should see ICMP ping request/reply packets, but the source address of should be the same as the IP address of R1's eth0. 
 
 :interrobang: Question 9 - Submit a single screenshot that contains both R3's console pinging and the Wireshark window capturing the translated ping. <br>
+
+:warning: Be sure to save this lab and all of your config settings. We'll be extending this lab in the future.
 
 ## Part 6: Submission
 
