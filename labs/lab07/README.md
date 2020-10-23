@@ -10,10 +10,9 @@ The table of contents for this lab is found below.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 1: Topology Setup <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 2: Link Aggregation (Link Bonding) and Interface Addressing <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 3: Setting Interface IP addresses <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 4: OSPF and DNS <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 5: NAT <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 6: Submission <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 3: OSPF and DNS <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 4: NAT <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 5: Submission <br>
 
 ## Part 1: Topology Setup
 
@@ -171,7 +170,7 @@ This ping should also fail.
 
 > From R2 and R3, you should be able to ping each of the routers connected interfaces, but not further than that. Why? Because we have not set up any static or dynamic routing policies.
 
-## Part 4: OSPF and DNS
+## Part 3: OSPF and DNS
 
 **Step 4.1** Configure R1, R2 and R3 to use single area ospf (Lab 5).<br>
 
@@ -243,7 +242,7 @@ set system name-server 8.8.8.8
 
 :interrobang: Question 7 - Submit a screenshot of Router 3's successful ping to google.com <br>
 
-## Part 5: NAT
+## Part 4: NAT
 
 By now, we should have strong theoretical knowledge of what NAT does. Let's turn that conceptual knowledge into practical knowledge. Just to summarize, NAT allows a single device, such as a router, to act as an agent between the Internet (or public network) and a local network (or private network), which means that only a single unique IP address is required to represent an entire group of computers to anything outside their network [source](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html#:~:text=Basically%2C%20NAT%20allows%20a%20single,to%20anything%20outside%20their%20network.) - [PDF](files/file2.pdf).
 
@@ -313,6 +312,6 @@ You should see ICMP ping request/reply packets, but the source address of should
 
 :warning: Be sure to save this lab and all of your config settings. We'll be extending this lab in the future.
 
-## Part 6: Submission
+## Part 5: Submission
 
 Convert your answer document in to a **.PDF** and upload a single `lastname_lab7.pdf` answer document containing all of your answers to the lab questions to Brightspace through the attachment uploads option. Source: [Dr. Ben Franske](https://wiki.ihitc.net/w/Franske_ITC-2900_Syllabus#Course_Description) - [PDF](files/file3.pdf)
