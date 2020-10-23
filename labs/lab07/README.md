@@ -35,7 +35,7 @@ First, lets start by setting up our topology.
 
 The link aggregation loops that you see are `not` part of the GNS3 application, so you don't need to worry about adding the two loops on your topology. We'll be logically implementing these loops later in the lab.
 
-You might have noticed that R2 has a total of four interfaces.y default, GNS3 provides us three interfaces for our VyOS routers so we'll need to configure R2 and R3 to have four interfaces.
+You might have noticed that R2 has a total of four interfaces. By default, GNS3 provides us three interfaces for our VyOS routers so we'll need to configure R2 and R3 to have four interfaces.
 
 **Step 1.2** Right click on R2 and select configure. <br>
 
