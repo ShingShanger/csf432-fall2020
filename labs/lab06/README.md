@@ -197,9 +197,21 @@ root@DNS-1:~# service dnsmasq restart
 
 **Step 3.6** From the DNS server console, ping example.com
 
-**Step 3.7** From the r2 console, ping example.com
-
 :interrobang: Question 8 - Provide a screenshot of your successful ping from the DNS server to example.com <br>
+
+Before we can ping any domain from R2, we first need to target the DNS server that it should use for name services.
+
+**Step 3.8** From R2's console in `configure` mode, run the below command:
+
+```text
+set system name-server 192.168.122.250
+commit
+save
+```
+
+Now, R2 can use our DNS server (192.168.122.250) to translate domain names into IP addresses.
+
+**Step 3.7** From the r2 console, ping example.com
 
 :interrobang: Question 9 - Provide a screenshot of your successful ping from r2 to example.com <br>
 
