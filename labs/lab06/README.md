@@ -47,18 +47,16 @@ First, we'll need to import this DNS appliance.
 
 **Step 2.1** Start your topology and open the console for your DNS server. <br>
 
-**Step 2.2** Start your topology and open the console for your DNS server.
-
 > Because the operating system for this device is Ubuntu, this console will accept linux-style terminal commands (ls, cd, clear, ifconfig, cat, nano).
 
-**Step 2.3** Observe the current IP configuration for your DNS server by running the below command:
+**Step 2.2** Observe the current IP configuration for your DNS server by running the below command:
 
 ```txt
 root@DNS-1:~# ifconfig
 ```
 You'll notice no IP address has been set for this device.
 
-**Step 2.4** Open up interface config file for this device by running the below command:
+**Step 2.3** Open up interface config file for this device by running the below command:
 
 ```txt
 root@DNS-1:~# nano /etc/network/interfaces 
@@ -67,20 +65,20 @@ root@DNS-1:~# nano /etc/network/interfaces
 > :bulb: nano servers as a command line editor much like vim. You can read up more about nano [here](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) - [PDF](files/file1.pdf).
 
 
-**Step 2.5** Comment out the static config for eth0 settings as shown below.
+**Step 2.4** Comment out the static config for eth0 settings as shown below.
 
 <img src="images/fig6.png" width="900px">
 
-**Step 2.6** Modify the below fields with the following config settings so your settings match the above screenshot settings.
+**Step 2.5** Modify the below fields with the following config settings so your settings match the above screenshot settings.
 
 * address: 192.168.122.250
 * netmask: 255.255.255.0
 * gateway: 192.168.122.1
 * up echo nameserver 192.168.122.1 > /etc/resolv.config
 
-**Step 2.7** Write these changes to the /etc/networking/interface file with `ctrl+x`, type in `Y`, and `Enter`. <br>
+**Step 2.6** Write these changes to the /etc/networking/interface file with `ctrl+x`, type in `Y`, and `Enter`. <br>
 
-**Step 2.8** Let's verify that our changes saved in this file by running the below command.
+**Step 2.7** Let's verify that our changes saved in this file by running the below command.
 
 ```txt
 root@DNS-1:~# cat /etc/network/interfaces
@@ -90,17 +88,17 @@ root@DNS-1:~# cat /etc/network/interfaces
 
 We need to shut down and restart our DNS server for eth0 to be configured with these new settings.
 
-**Step 2.9** Right click your DNS server, select stop, right click again, and select start. <br>
+**Step 2.8** Right click your DNS server, select stop, right click again, and select start. <br>
 
-**Step 2.10** Verify eth0 as been configured by running the `ifconfig` command again.
+**Step 2.9** Verify eth0 as been configured by running the `ifconfig` command again.
 
 At this point you should see the IP 192.168.122.250 with subnet mask 255.255.255.0
 
-**Step 2.11** Console into all three of your VyOS routers and install the VyOS image by using the `install image` command. Follow the necessary prompts to complete the install process.
+**Step 2.10** Console into all three of your VyOS routers and install the VyOS image by using the `install image` command. Follow the necessary prompts to complete the install process.
 
-**Step 2.12** To make sure all of your configuration settings persist (save) when you close out of your project, right click on your router icon in your GNS3 workspace, select `configure`, and make sure `Save the VM` state is selected in the `On close` field. Click Apply and Ok.
+**Step 2.11** To make sure all of your configuration settings persist (save) when you close out of your project, right click on your router icon in your GNS3 workspace, select `configure`, and make sure `Save the VM` state is selected in the `On close` field. Click Apply and Ok.
 
-**Step 2.13** Use the below table to set up the interfaces for Router#01 and Router#02.
+**Step 2.12** Use the below table to set up the interfaces for Router#01 and Router#02.
 
 <table>
 <tr><th> Router 1 </th><th> Router 2</th></tr>
@@ -128,7 +126,7 @@ At this point you should see the IP 192.168.122.250 with subnet mask 255.255.255
 
 
 
-**Step 2.14** Set the host name and domain name for R1 with the below commands
+**Step 2.13** Set the host name and domain name for R1 with the below commands
 
 ```text
 vyos@vyos# set system host-name r1
@@ -139,7 +137,7 @@ vyos@vyos# save
 
 Let's do some testing on our current network configuration.
 
-**Step 2.15** Open the DNS server console and ping 192.168.122.201/24 and 192.168.122.202/24
+**Step 2.14** Open the DNS server console and ping 192.168.122.201/24 and 192.168.122.202/24
 
 > :bulb: Use `ctrl + c` to stop a ping request.
 
@@ -149,9 +147,9 @@ At this point, there should be connectivity between the DNS server and r1 (192.1
 
 :interrobang: Question 3 - Submit a screenshot of DNS - >  192.168.122.202 ping <br>
 
-**Step 2.16** From the DNS server console, ping example.com
+**Step 2.15** From the DNS server console, ping example.com
 
-**Step 2.17** From the r2 console, ping example.com
+**Step 2.16** From the r2 console, ping example.com
 
 :interrobang: Question 4 - Describe what happened for **Steps 2.16 and 2.17**. 
 
