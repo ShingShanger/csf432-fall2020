@@ -178,6 +178,11 @@ I've enumerated some important observations about our network topology for your 
 
 #### Router 1
 * Router ID: 10.1.1.1
+* Over ospf area 0, R1 should be able to detect networks
+    * 10.1.1.1/32
+    * 10.0.0.0/31
+    * 10.0.0.2/31
+    * 192.168.0.0/24
 
 #### Router 2
 * Router ID: 10.2.2.2
