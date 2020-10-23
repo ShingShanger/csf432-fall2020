@@ -10,14 +10,15 @@ The table of contents for this lab is found below.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 1: Topology Setup <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 2: Link Aggregation (Link Bonding) and Interface Addressing <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 3: Setting Interface IP addresses <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 4: OSPF and DNS <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 5: NAT <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 6: Submission <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 3: OSPF and DNS <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 4: NAT <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part 5: Submission <br>
 
 ## Part 1: Topology Setup
 
 This week, we discussed the importance of the cabling that our networks are made up of. In this lab, we'll take a closer look at how we can aggregate the throughput of two unique cables into one using `Link Aggregation Control Protocol (LACP)`. We've also taken a theoretical look at `Network Address Translation (NAT)` in previous lectures, so in this lab we'll actually be implementing NAT services in our topology.
+
+
 
 In this lab we'll be merging a few of the skills that we've practiced over the past few weeks. I'm going to omit the nitty-gritty, step-by-step details of things we've already done because you (should) know how to do them by now. So, the next few steps high level instructions. Of course, when we get to new commands that you haven't seen yet in this class I'll provide step-by-step instruction.
 
@@ -25,13 +26,15 @@ First, lets start by setting up our topology.
 
 **Step 1.1** Drag and drop your network devices to recreate the topology below.
 
+:warning: Be sure to save save the state of your VyOS VM's on shutdown (right click > On close: save the VM state).
+
 <img src="images/fig1.png" width="900px">
 
 > :warning: You'll notice some new notation in the above topology. The two loops that you see connecting the cables running from R2 and R3 denote `Link aggregation` for those cables. Link aggregation is also referred to as `Link Bonding` or a `Bonded Interface`.
 
 The link aggregation loops that you see are `not` part of the GNS3 application, so you don't need to worry about adding the two loops on your topology. We'll be logically implementing these loops later in the lab.
 
-You might have noticed that R2 has a total of four interfaces.y default, GNS3 provides us three interfaces for our VyOS routers so we'll need to configure R2 and R3 to have four interfaces.
+You might have noticed that R2 has a total of four interfaces. By default, GNS3 provides us three interfaces for our VyOS routers so we'll need to configure R2 and R3 to have four interfaces.
 
 **Step 1.2** Right click on R2 and select configure. <br>
 
@@ -167,7 +170,7 @@ This ping should also fail.
 
 > From R2 and R3, you should be able to ping each of the routers connected interfaces, but not further than that. Why? Because we have not set up any static or dynamic routing policies.
 
-## Part 4: OSPF and DNS
+## Part 3: OSPF and DNS
 
 **Step 4.1** Configure R1, R2 and R3 to use single area ospf (Lab 5).<br>
 
@@ -175,6 +178,11 @@ I've enumerated some important observations about our network topology for your 
 
 #### Router 1
 * Router ID: 10.1.1.1
+* Over ospf area 0, R1 should be able to detect networks
+    * 10.1.1.1/32
+    * 10.0.0.0/31
+    * 10.0.0.2/31
+    * 192.168.0.0/24
 
 #### Router 2
 * Router ID: 10.2.2.2
@@ -216,7 +224,7 @@ After successfully setting up OSFP, you should be able to send ping requests and
 
 :interrobang: Question 7 - Submit a screenshot of R3's successful ping to to R1's eth0 interface <br>
 
-## Part 5: NAT
+## Part 4: NAT
 
 By now, we should have strong theoretical knowledge of what NAT does. Let's turn that conceptual knowledge into practical knowledge. Just to summarize, NAT allows a single device, such as a router, to act as an agent between the Internet (or public network) and a local network (or private network), which means that only a single unique IP address is required to represent an entire group of computers to anything outside their network [source](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html#:~:text=Basically%2C%20NAT%20allows%20a%20single,to%20anything%20outside%20their%20network.) - [PDF](files/file2.pdf).
 
@@ -302,6 +310,8 @@ set system name-server 8.8.8.8
 
 
 
-## Part 6: Submission
+:warning: Be sure to save this lab and all of your config settings. We'll be extending this lab in the future.
+
+## Part 5: Submission
 
 Convert your answer document in to a **.PDF** and upload a single `lastname_lab7.pdf` answer document containing all of your answers to the lab questions to Brightspace through the attachment uploads option. Source: [Dr. Ben Franske](https://wiki.ihitc.net/w/Franske_ITC-2900_Syllabus#Course_Description) - [PDF](files/file3.pdf)
