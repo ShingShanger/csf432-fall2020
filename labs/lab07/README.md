@@ -149,7 +149,7 @@ Let's do another small sanity check to see the current level of visibility each 
 
 **Step 2.3** From R1, ping `8.8.8.8`. Use `ctrl+c` to terminate the ping stream.<br>
 
-8.8.8.8 is the well known primary DNS server for Google DNS. Because out NAT cloud should have connectivity to internet, you should be getting a successful reply.
+8.8.8.8 is the well known primary DNS server for Google DNS. Because our NAT cloud should have connectivity to internet, you should be getting a successful reply.
 
 **Step 2.4** From R1, check to see if we have name services by pinging google.com<br>
 
@@ -192,52 +192,29 @@ I've enumerated some important observations about our network topology for your 
     * 192.168.0.0/24
     * dhcp assigned subnet (R1's eth0)
 
-
-After successfully setting up OSFP, you should be able to successfully ping 8.8.8.8 from R2 and R3 after we set up a default route. Don't forget ~ by setting up a default route we're essentially saying, "if you give me an address to ping to and I don't have that address in my routing table, I'll send it to this interface directly and let them worry about it".
-
-Because R1's eth0 can talk to the entire internet we should use that interface as our default route.
+Because R1's eth0 can talk to the entire internet we should target R1 interfaces as our default route. Don't forget ~ by setting up a default route we're essentially saying, "if you give me an address to ping to and I don't have that address in my routing table, I'll send it to this interface directly and let them worry about it".
 
 **Step 4.2** From R2's console in `configure` mode, run the below command: <br>
 
 ```text
-set protocols static route 0.0.0.0/0 next-hop <R1's eth0 address (dhcp assigned)>
+set protocols static route 0.0.0.0/0 next-hop 10.0.0.1
 ```
 
 **Step 4.3** From R3's console in `configure` mode, run the below command: <br>
 
 ```text
-set protocols static route 0.0.0.0/0 next-hop <R1's eth0 address (dhcp assigned)>
+set protocols static route 0.0.0.0/0 next-hop 10.0.0.3
 ```
 
-**Step 4.4** From R2, ping 8.8.8.8 <br>
+After successfully setting up OSFP, you should be able to send ping requests and get ping replies all of our internal router interfaces. You should also be able to send ping requests to 8.8.8.8 from R2 and R3, but you won't get any replies back. Why? The IPs on our internal networks are private IP addresses which are ***not*** routable over the internet. We need NAT to take those private IP address, translate them into routable IP address (outbound NAT) and send them out over the internet. We also need NAT and take any external replies from the internet, translate the external IP destination to an internal IP destination (inbound NAT), and send it to the appropriate workstation.
 
-**Step 4.5** From R3, ping 8.8.8.8 <br>
+**Step 4.4** From R2, ping R1's eth0 interface (verifying OSFP)
 
-Finally, we should have a successful reply from googles DNS server for R2 and R3.
+:interrobang: Question 6 - Submit a screenshot of R2's successful ping to R1's eth0 interface <br>
 
-**Step 4.6** From R2, ping google.com <br>
+**Step 4.5** From R3, ping R1's eth0 interface (verifying OSFP)
 
-No response? That's because we have not identified a DNS server to use for name services yet. Well, we know that we can talk to google's DNS server (8.8.8.8), so why not use it?
-
-**Step 4.7** From R2's console in `configure` mode, run the below command:<br>
-
-```text
-set system name-server 8.8.8.8
-```
-
-**Step 4.8** From R3's console in `configure` mode, run the below command:<br>
-
-```text
-set system name-server 8.8.8.8
-```
-
-**Step 4.9** From R2, ping google.com <br>
-
-**Step 4.9** From R3, ping google.com <br>
-
-:interrobang: Question 6 - Submit a screenshot of Router 2's successful ping to google.com <br>
-
-:interrobang: Question 7 - Submit a screenshot of Router 3's successful ping to google.com <br>
+:interrobang: Question 7 - Submit a screenshot of R3's successful ping to to R1's eth0 interface <br>
 
 ## Part 5: NAT
 
@@ -247,17 +224,17 @@ Let's take a look at how R2 packets look leaving our topology before NAT is conf
 
 **Step 5.1** Inspect the `R1 eth0 <=> nat0 NAT1` channel using Wireshark. <br>
 
-**Step 5.2** From R2's console, ping google.com <br>
+**Step 5.2** From R2's console, ping 8.8.8.8 <br>
 
-**Step 5.3** The source IP address for these packets should be a R2 IP address.<br>
+ You should see ping requests trying to touch base with 8.8.8.8, but there are no 8.8.8.8 ping replies. 
 
 As we can see, no network address translation is taking place. Because R1's eth0 is our default-route, any internal traffic that is going outbound (to the internet) will need to go through that interface. So, this seems like the perfect place to perform NAT.<br>
 
-**Step 5.4** Open R1's console to `configure` mode<br>
+**Step 5.3** Open R1's console to `configure` mode<br>
 
 We need to translate *all* packets coming from *any* subnet on our internal network. <br>
 
-**Step 5.5** Set these `nat source rules` with the below commands:<br>
+**Step 5.4** Set these `nat source rules` with the below commands:<br>
 
 ```text
 vyos@R1# set nat source rule 100 source address 10.1.1.1/32
@@ -270,7 +247,7 @@ vyos@R1# set nat source rule 106 source address 192.168.10.0/24
 ```
 Now that we know which subnets to keep an eye out for NAT, we need to specific the interface that we want to perform NAT on for each rule.<br>
 
-**Step 5.6** We can do this by running the below commands:<br>
+**Step 5.5** We can do this by running the below commands:<br>
 
 ```text
 vyos@R1# set nat source rule 100 outbound-interface eth0
@@ -295,17 +272,35 @@ vyos@R1# set nat source rule 104 translation address masquerade
 vyos@R1# set nat source rule 105 translation address masquerade
 vyos@R1# set nat source rule 106 translation address masquerade
 ```
-**Step 5.7** While still inspect the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping google.com from R2. <br>
+**Step 5.7** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R2. <br>
 
 You should see ICMP ping request/reply packets, but the source address of should be the same as the IP address of R1's eth0. 
 
-:interrobang: Question 8 - Submit a single screenshot that contains both R2's console pinging and the Wireshark window capturing the translated ping. <br>
-
-**Step 5.8** While still inspect the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping google.com from R3. <br>
+**Step 5.8** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R3. <br>
 
 You should see ICMP ping request/reply packets, but the source address of should be the same as the IP address of R1's eth0. 
 
-:interrobang: Question 9 - Submit a single screenshot that contains both R3's console pinging and the Wireshark window capturing the translated ping. <br>
+**Step 5.9** From R2, ping google.com <br>
+
+No response? That's because we have not identified a DNS server to use for name services yet. Well, we know that we can talk to google's DNS server (8.8.8.8), so why not use it?
+
+**Step 5.10** From R2's console in `configure` mode, run the below command:<br>
+
+```text
+set system name-server 8.8.8.8
+```
+
+**Step 5.11** From R3's console in `configure` mode, run the below command:<br>
+
+```text
+set system name-server 8.8.8.8
+```
+
+:interrobang: Question 8 - Submit a single screenshot that contains both R2's console pinging google.com and the Wireshark window capturing the translated ping. <br>
+
+:interrobang: Question 9 - Submit a single screenshot that contains both R3's console pinging google.com and the Wireshark window capturing the translated ping. <br>
+
+
 
 ## Part 6: Submission
 
