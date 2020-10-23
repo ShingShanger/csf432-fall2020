@@ -187,16 +187,19 @@ I've enumerated some important observations about our network topology for your 
 #### Router 2
 * Router ID: 10.2.2.2
 * Over ospf area 0, R2 should be able to detect networks
+    * 10.2.2.2/32
     * 10.0.0.0/31
-    * 192.168.0.0/24
     * 10.0.0.4/31
+    * 192.168.0.0/24
     * dhcp assigned subnet (R1's eth0)
 
 #### Router 3
 * Router ID: 10.3.3.3
 * Over ospf area 0, R3 should be able to detect networks
+    * 10.3.3.3/32
     * 10.0.0.0/31
     * 10.0.0.2/31
+    * 10.0.0.4/31
     * 192.168.0.0/24
     * dhcp assigned subnet (R1's eth0)
 
