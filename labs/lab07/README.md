@@ -172,7 +172,7 @@ This ping should also fail.
 
 ## Part 3: OSPF
 
-**Step 4.1** Configure R1, R2 and R3 to use single area ospf (Lab 5).<br>
+**Step 3.1** Configure R1, R2 and R3 to use single area ospf (Lab 5).<br>
 
 I've enumerated some important observations about our network topology for your convenience below:
 
@@ -205,13 +205,13 @@ I've enumerated some important observations about our network topology for your 
 
 Because R1's eth0 can talk to the entire internet we should target R1 interfaces as our default route. Don't forget ~ by setting up a default route we're essentially saying, "if you give me an address to ping to and I don't have that address in my routing table, I'll send it to this interface directly and let them worry about it".
 
-**Step 4.2** From R2's console in `configure` mode, run the below command: <br>
+**Step 3.2** From R2's console in `configure` mode, run the below command: <br>
 
 ```text
 set protocols static route 0.0.0.0/0 next-hop 10.0.0.1
 ```
 
-**Step 4.3** From R3's console in `configure` mode, run the below command: <br>
+**Step 3.3** From R3's console in `configure` mode, run the below command: <br>
 
 ```text
 set protocols static route 0.0.0.0/0 next-hop 10.0.0.3
@@ -219,11 +219,11 @@ set protocols static route 0.0.0.0/0 next-hop 10.0.0.3
 
 After successfully setting up OSFP, you should be able to send ping requests and get ping replies all of our internal router interfaces. You should also be able to send ping requests to 8.8.8.8 from R2 and R3, but you won't get any replies back. Why? The IPs on our internal networks are private IP addresses which are ***not*** routable over the internet. We need NAT to take those private IP address, translate them into routable IP address (outbound NAT) and send them out over the internet. We also need NAT and take any external replies from the internet, translate the external IP destination to an internal IP destination (inbound NAT), and send it to the appropriate workstation.
 
-**Step 4.4** From R2, ping R1's eth0 interface (verifying OSFP)
+**Step 3.4** From R2, ping R1's eth0 interface (verifying OSFP)
 
 :interrobang: Question 6 - Submit a screenshot of R2's successful ping to R1's eth0 interface <br>
 
-**Step 4.5** From R3, ping R1's eth0 interface (verifying OSFP)
+**Step 3.5** From R3, ping R1's eth0 interface (verifying OSFP)
 
 :interrobang: Question 7 - Submit a screenshot of R3's successful ping to to R1's eth0 interface <br>
 
@@ -233,19 +233,19 @@ By now, we should have strong theoretical knowledge of what NAT does. Let's turn
 
 Let's take a look at how R2 packets look leaving our topology before NAT is configured.
 
-**Step 5.1** Inspect the `R1 eth0 <=> nat0 NAT1` channel using Wireshark. <br>
+**Step 4.1** Inspect the `R1 eth0 <=> nat0 NAT1` channel using Wireshark. <br>
 
-**Step 5.2** From R2's console, ping 8.8.8.8 <br>
+**Step 4.2** From R2's console, ping 8.8.8.8 <br>
 
  You should see ping requests trying to touch base with 8.8.8.8, but there are no 8.8.8.8 ping replies. 
 
 As we can see, no network address translation is taking place. Because R1's eth0 is our default-route, any internal traffic that is going outbound (to the internet) will need to go through that interface. So, this seems like the perfect place to perform NAT.<br>
 
-**Step 5.3** Open R1's console to `configure` mode<br>
+**Step 4.3** Open R1's console to `configure` mode<br>
 
 We need to translate *all* packets coming from *any* subnet on our internal network. <br>
 
-**Step 5.4** Set these `nat source rules` with the below commands:<br>
+**Step 4.4** Set these `nat source rules` with the below commands:<br>
 
 ```text
 vyos@R1# set nat source rule 100 source address 10.1.1.1/32
@@ -258,7 +258,7 @@ vyos@R1# set nat source rule 106 source address 192.168.10.0/24
 ```
 Now that we know which subnets to keep an eye out for NAT, we need to specific the interface that we want to perform NAT on for each rule.<br>
 
-**Step 5.5** We can do this by running the below commands:<br>
+**Step 4.5** We can do this by running the below commands:<br>
 
 ```text
 vyos@R1# set nat source rule 100 outbound-interface eth0
@@ -272,7 +272,7 @@ vyos@R1# set nat source rule 106 outbound-interface eth0
 
 Finally, we use the `masquerade` command so all packets coming from any of the identified subnets become masked it so it appears to be coming from the IP address of the interface. <br>
 
-**Step 5.6** We can do this by running the below commands:<br>
+**Step 4.6** We can do this by running the below commands:<br>
 
 ```text
 vyos@R1# set nat source rule 100 translation address masquerade
@@ -283,25 +283,25 @@ vyos@R1# set nat source rule 104 translation address masquerade
 vyos@R1# set nat source rule 105 translation address masquerade
 vyos@R1# set nat source rule 106 translation address masquerade
 ```
-**Step 5.7** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R2. <br>
+**Step 4.7** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R2. <br>
 
 You should see ICMP ping request/reply packets, but the source address of should be the same as the IP address of R1's eth0. 
 
-**Step 5.8** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R3. <br>
+**Step 4.8** While still inspecting the `R1 eth0 <=> nat0 NAT1` channel using Wireshark, ping 8.8.8.8 from R3. <br>
 
 You should see ICMP ping request/reply packets, but the source address of should be the same as the IP address of R1's eth0. 
 
-**Step 5.9** From R2, ping google.com <br>
+**Step 4.9** From R2, ping google.com <br>
 
 No response? That's because we have not identified a DNS server to use for name services yet. Well, we know that we can talk to google's DNS server (8.8.8.8), so why not use it?
 
-**Step 5.10** From R2's console in `configure` mode, run the below command:<br>
+**Step 4.10** From R2's console in `configure` mode, run the below command:<br>
 
 ```text
 set system name-server 8.8.8.8
 ```
 
-**Step 5.11** From R3's console in `configure` mode, run the below command:<br>
+**Step 4.11** From R3's console in `configure` mode, run the below command:<br>
 
 ```text
 set system name-server 8.8.8.8
@@ -310,7 +310,6 @@ set system name-server 8.8.8.8
 :interrobang: Question 8 - Submit a single screenshot that contains both R2's console pinging google.com and the Wireshark window capturing the translated ping. <br>
 
 :interrobang: Question 9 - Submit a single screenshot that contains both R3's console pinging google.com and the Wireshark window capturing the translated ping. <br>
-
 
 
 :warning: Be sure to save this lab and all of your config settings. We'll be extending this lab in the future.
