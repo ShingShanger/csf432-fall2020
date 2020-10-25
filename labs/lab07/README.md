@@ -118,7 +118,7 @@ The bonding interface provides a method for aggregating multiple network interfa
 
 Now that we have our interfaces addressed, lets aggregate the `eth2` and  `eth3` interfaces for R2 and R3.
 
-**Step 2.2** Open the console for R2, enter `configuration` mode and run the below commands:
+**Step 2.3** Open the console for R2, enter `configuration` mode and run the below commands:
 
 ```text
 vyos@R2# set interfaces bonding bond0 address 10.0.0.4/31
@@ -126,7 +126,7 @@ vyos@R2# set interfaces ethernet eth2 bond-group bond0
 vyos@R2# set interfaces ethernet eth3 bond-group bond0
 ```
 
-**Step 2.2** Open the console for R3, enter `configuration` mode and run the below commands:
+**Step 2.4** Open the console for R3, enter `configuration` mode and run the below commands:
 
 ```text
 vyos@R3# set interfaces bonding bond0 address 10.0.0.5/31
@@ -138,7 +138,7 @@ vyos@R3# set interfaces ethernet eth3 bond-group bond0
 
 Let's do a quick sanity test and verify that LACP is bonding `eth2` and `eth3`. We can use Wireshark to inspect the network behavior on these two channels. If we periodically see LACP packets reminding each interface that the other exists, we can claim success.
 
-**Step 2.3** Inspect the `R2 eth2 <=> eth2 R3` channel using Wireshark.
+**Step 2.5** Inspect the `R2 eth2 <=> eth2 R3` channel using Wireshark.
 
 :interrobang: Question 2 - Submit a screenshot of your Wireshark capture showing LACP traffic. <br>
 
@@ -150,23 +150,23 @@ Let's do a quick sanity test and verify that LACP is bonding `eth2` and `eth3`. 
 
 Let's do another small sanity check to see the current level of visibility each network device has.
 
-**Step 2.3** From R1, ping `8.8.8.8`. Use `ctrl+c` to terminate the ping stream.<br>
+**Step 2.6** From R1, ping `8.8.8.8`. Use `ctrl+c` to terminate the ping stream.<br>
 
 8.8.8.8 is the well known primary DNS server for Google DNS. Because our NAT cloud should have connectivity to internet, you should be getting a successful reply.
 
-**Step 2.4** From R1, check to see if we have name services by pinging google.com<br>
+**Step 2.7** From R1, check to see if we have name services by pinging google.com<br>
 
 Again, this should be you should be getting a successful reply.
 
-**Step 2.4** From R2, ping `8.8.8.8`. <br>
+**Step 2.8** From R2, ping `8.8.8.8`. <br>
 
 This ping should fail.
 
-**Step 2.5** From R3, ping `8.8.8.8`. <br>
+**Step 2.9** From R3, ping `8.8.8.8`. <br>
 
 This ping should also fail.
 
-**Step 2.6** Stop monitoring the `R2 eth2 <=> eth2 R3` channel (right click on interface > stop capture) and close Wireshark. <br>
+**Step 2.10** Stop monitoring the `R2 eth2 <=> eth2 R3` channel (right click on interface > stop capture) and close Wireshark. <br>
 
 > From R2 and R3, you should be able to ping each of the routers connected interfaces, but not further than that. Why? Because we have not set up any static or dynamic routing policies.
 
