@@ -182,7 +182,7 @@ I've enumerated some important observations about our network topology for your 
     * 10.1.1.1/32
     * 10.0.0.0/31
     * 10.0.0.2/31
-    * 192.168.0.0/24
+    * 192.168.10.0/24
 
 #### Router 2
 * Router ID: 10.2.2.2
@@ -190,7 +190,7 @@ I've enumerated some important observations about our network topology for your 
     * 10.2.2.2/32
     * 10.0.0.0/31
     * 10.0.0.4/31
-    * 192.168.0.0/24
+    * 192.168.10.0/24
     * dhcp assigned subnet (R1's eth0)
 
 #### Router 3
@@ -200,7 +200,7 @@ I've enumerated some important observations about our network topology for your 
     * 10.0.0.0/31
     * 10.0.0.2/31
     * 10.0.0.4/31
-    * 192.168.0.0/24
+    * 192.168.10.0/24
     * dhcp assigned subnet (R1's eth0)
 
 Because R1's eth0 can talk to the entire internet we should target R1 interfaces as our default route. Don't forget ~ by setting up a default route we're essentially saying, "if you give me an address to ping to and I don't have that address in my routing table, I'll send it to this interface directly and let them worry about it".
