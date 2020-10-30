@@ -2,7 +2,7 @@
 
 Before attempting this lab, please make sure you have completed all of the material in the lessons tab.
 
-Create a copy of this google document [lastname_lab08]() (File > Make a Copy) to record all of your assignment answers in.
+Create a copy of this google document [lastname_lab08](https://docs.google.com/document/d/1Wz-9ZXH6saf5t8LscjjEEgvT9FYcvXBxhW9ezn3kcxk/edit?usp=sharing) (File > Make a Copy) to record all of your assignment answers in.
 
 > :warning: Failure to use answer document properly will result in a 10pt deduction from final score.
 
@@ -72,9 +72,9 @@ First, lets start by setting up our topology.
 </tr> 
 </table>
 
-Because our networks are starting to get a bit more complicated, let's do some house keeping and provide a description of each of our firewall/router interface.
+Because our networks are starting to get a bit more complicated, let's do some housekeeping and provide a description of each of our firewall/router interfaces.
 
-**Step 2.2** Set each interface description with th below commands:
+**Step 2.2** Set each interface description with the below commands:
 
 ```text
 vyos@vyos# set interfaces ethernet eth0 description 'OUTSIDE'
@@ -82,13 +82,13 @@ vyos@vyos# set interfaces ethernet eth1 description 'DMZ'
 vyos@vyos# set interfaces ethernet eth2 description ‘LAN’
 ```
 
-> Because we are only using lightweight VPCs on our topology that can only use telnet and not ssh, we wont need to set up ssh services for this device. If we wanted to, we could use the `set service ssh port '22'` command.
+> Because we are only using lightweight VPCs on our topology that can only use telnet and not ssh, we don't need to set up ssh services for this device. If we wanted to, we could use the `set service ssh port '22'` command.
 
 At this point, if you exit configuration mode and show interfaces, you'll see the descriptions set on the right hand side.
 
 ## Part 3: DNS Forwarding and NAT
 
-Lets make it so the devices in our DMZ and LAN can communicate with the outside world.
+Let's make it so the devices in our DMZ and LAN can communicate with the outside world.
 
 **Step 3.1** Run the below commands to configure NAT both our "LAN" & "DMZ" networks.
 
@@ -249,13 +249,13 @@ set interfaces ethernet eth2 firewall out name 'LAN-OUT'
 
 Let's test our rule set.
 
-:interrobang: Question 3 - Ping 8.8.8.8 from VPCS1  <br>
+:interrobang: Question 3 - Ping 8.8.8.8 from VPCS1. Submit a screenshot of your failed ping <br>
 
-:interrobang: Question 4 - Ping 8.8.8.8 from your VyOS router <br>
+:interrobang: Question 4 - Ping 8.8.8.8 from your VyOS router. Submit a screenshot of your failed ping <br>
 
-If we get an icmp timeout on both of these devices, that means that our VyOS router/firewall is successfully blocking inbound adn outbound ping traffic according to our rule set.
+If we get an icmp timeout on both of these devices, that means that our VyOS router/firewall is successfully blocking inbound and outbound ping traffic according to our rule set.
 
-:interrobang: Question 5 - While in `operation` mode in your VyOS device, run the `history` command<br>
+:interrobang: Question 5 - While in `operation` mode on your VyOS device, run the `history` command. Submit a screenshot of your console. <br>
 
 :interrobang: Question 6 - Save your VyOS device console in a `.txt` file and include it into your .zip submission (in your console, cmd+s or ctrl+s depending on your host OS). <br>
 

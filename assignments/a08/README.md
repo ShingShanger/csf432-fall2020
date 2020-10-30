@@ -2,7 +2,7 @@
 
 Before attempting this assignment, please make sure you have completed all of the material in the lessons tab. 
 
-Create a copy of this google document [lastname_A08]() (File > Make a Copy) to record all of your assignment answers in.
+Create a copy of this google document [lastname_A08](https://docs.google.com/document/d/1UqGe4_sEPDxYuSYaN0iW6rPRbrr0D9QcPrKSK-z8s9w/edit?usp=sharing) (File > Make a Copy) to record all of your assignment answers in.
 
 > :warning: Failure to use answer document properly will result in a 10pt deduction from final score.
 
