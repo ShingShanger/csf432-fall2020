@@ -2,7 +2,7 @@
 
 Before attempting this assignment, please make sure you have completed all of the material in the lessons tab. 
 
-Create a copy of this google document [lastname_A10]() (File > Make a Copy) to record all of your assignment answers in.
+Create a copy of this google document [lastname_A10](https://docs.google.com/document/d/1eJEKrmgVHJ-esWbi8HoXoyehqPXnQORvO5JvcV-mE3A/edit?usp=sharing) (File > Make a Copy) to record all of your assignment answers in.
 
 > :warning: Failure to use answer document properly will result in a 10pt deduction from final score.
 
@@ -79,9 +79,9 @@ The table of contents for this lab is found below.
 
 :interrobang: Question 25 - You are the new CISO at a medium sized organization. You discover that no formal password policies are in place. Provide a short summary of what password policies you would implement at your new organization (consider the different types of user groups that would likely exist and the access levels each group might have). <br>
 
-:interrobang: Question 26 - What are licensing restrictions and why are them important to keep track of? <br>
+:interrobang: Question 26 - What are licensing restrictions and why are they important to keep track of? <br>
 
-:interrobang: Question 27 - Data loss prevention systems are critically important for the inevitable security breach. Research a security event/breach that was not mentioned in this weeks lecture summary where the DLP policies failed to protect user data. (Don't spend to much time on this. Not a full report ~ just a quick summary and details about the event. <br>
+:interrobang: Question 27 - Data loss prevention systems are critically important for the inevitable security breach. Research a security event/breach that was not mentioned in this weeks lecture summary where the DLP policies failed to protect user data. (Don't spend too much time on this. Not a full report ~ just a quick summary and details about the event. <br>
 
 :interrobang: Question 28 - Because of COVID-19, your organization as an increased amount of remote workers that need to pull and push sensitive data to your organizations network. What remote access policies would you implement to insure the integrity and confidentiality of that sensitive data? <br>
 
