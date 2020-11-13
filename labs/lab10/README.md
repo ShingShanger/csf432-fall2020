@@ -24,8 +24,8 @@ First, lets take a look at this labs software requirements:
 ##### Download to host
 
 * VMWare (Already installed)
-* [The Kali Linux (64 bit), Penetration Testing Distribution](https://www.kali.org/downloads/) - [file]()
-* [Metasploitable2: Vulnerable Linux Platform](http://sourceforge.net/projects/metasploitable/files/Metasploitable2/) - [file]()
+* [The Kali Linux (64 bit), Penetration Testing Distribution](https://www.kali.org/downloads/) - [file](https://drive.google.com/file/d/1QVz9VUvuDyLbiYnGz_dh2g7MfcIpWKXI/view?usp=sharing)
+* [Metasploitable2: Vulnerable Linux Platform](http://sourceforge.net/projects/metasploitable/files/Metasploitable2/) - [file](https://drive.google.com/file/d/14XFqaqOMJ8V4r9I70mfOqjNeLnjaoNnY/view?usp=sharing)
 
 ##### Do not download to host (we'll be doing this together in our guest Kali VM)
 * [nmap: the Network Mapper - Free Security Scanner](https://nmap.org/)
