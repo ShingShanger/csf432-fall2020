@@ -42,7 +42,7 @@ macOS - [VMWare Fusion](https://geekflare.com/kali-linux-installation-guide-vmwa
 Use the below specifications and options to create your VM:
 
 * Memory Size: 512 MB minimum; 1024 MB is recommended (You may allocate more RAM if your system can handle it. It is recommended that you use no more than 50% of your system's RAM. We will be running several virtual machine's at one time and you may need to optimize your virtual machines memory usage.)
-* Host name: csf432-student
+* User name: csf432-student
 * Password: pa55word
 
 
