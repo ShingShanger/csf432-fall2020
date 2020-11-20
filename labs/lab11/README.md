@@ -147,7 +147,7 @@ You can download this file [here](https://drive.google.com/file/d/1Fz_tm0DoZNGGa
 
 > A dictionary attack is based on trying all the strings in a pre-arranged listing. Such attacks originally used words one would find in a dictionary
 
-Aircrack-ng is a network software suite consisting of a detector, packet sniffer, WEP and WPA/WPA2-PSK cracker and analysis tool for 802.11 wireless LANs. Kali Linux has already been installed by default.
+Aircrack-ng is a network software suite consisting of a detector, packet sniffer, WEP and WPA/WPA2-PSK cracker and analysis tool for 802.11 wireless LANs. Kali Linux has aircrack-ng installed by default ~ so no need to go through a painfull terminal download and install process here.
 
 You can learn more about the options you have available to you by running the manual command below:
 
