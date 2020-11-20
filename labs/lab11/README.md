@@ -56,9 +56,9 @@ What is PMK and why we need it? Now we know what is PTK and GTK. PTK is generate
 
 `PTK = PRF (PMK + Anonce + SNonce + Mac (AA)+ Mac (SA))`
 
-Pairwise master is key generated from master session key (MSK). In case of WPA2/PSK when device authenticates with access point the PSK becomes PMK.
+Pairwise master is key generated from master session key (MSK). In case of WPA2/PSK when device authenticates with an access point the PSK becomes PMK.
 
-Point to Remember: PMK resides on all stations as in AP and client devices, so we do not need to share this information. We use this information to create PTK which are used for unicast data encryption.
+> Point to Remember: PMK resides on all stations as in AP and client devices, so we do not need to share this information. We use this information to create PTK which are used for unicast data encryption.
 
 #### GMK (Group Master Key):
 
@@ -195,7 +195,6 @@ Here the -w option specifies the path to our dictionary.
 Because the capture file we are testing against is using WPA encryption standards, we're going to have a harder time getting the key we need to decode this network traffic. Keep in mind that if this capture file was using WEP, we could duplicate this exact process and easily gain unauthorized access to this network. While it might seem like no one in their right mind would be using WEP, there are still many networks that do use it as a result of an oversight or deprecated hardware.
 
 It's trivial to scan for WEP networks while driving down the highway or around popular shopping districts. This is the exact scenario that resulted in the loss of 45 million TK Maxx customer records ~ [source](https://www.zdnet.com/article/wi-fi-hack-caused-tk-maxx-security-breach/) - [file](files/file1.pdf).
-
 
 
 ## Part 4: Submission
