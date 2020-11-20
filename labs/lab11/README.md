@@ -179,7 +179,7 @@ Here the -w option specifies the path to our dictionary.
 
 Because the capture file we are testing against is using WPA encryption standards, we're going to have a harder time getting the key we need to decode this network traffic. Keep in mind that if this capture file was using WEP, we could duplicate this exact process and easily gain unauthorized access to this network. While it might seem like no one in their right mind would be using WEP, there are still many networks that do use it as a result of an oversight or deprecated hardware.
 
-It's trivial to scan for WEP networks while driving down the highway or around popular shopping districts. This is the exact scinero that resulted in the loss of 45 million TK Maxx customer records ~ [source](https://www.zdnet.com/article/wi-fi-hack-caused-tk-maxx-security-breach/) - [file](files/file1.pdf).
+It's trivial to scan for WEP networks while driving down the highway or around popular shopping districts. This is the exact scenario that resulted in the loss of 45 million TK Maxx customer records ~ [source](https://www.zdnet.com/article/wi-fi-hack-caused-tk-maxx-security-breach/) - [file](files/file1.pdf).
 
 
 
