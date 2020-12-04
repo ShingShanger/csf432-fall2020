@@ -125,7 +125,7 @@ mike@Mikes-MacBook-Pro ~ % dig aol.com +short
 
 :interrobang: Question 24 - What are some of the places or metrics that can be checked to determine if a bottleneck exists on a network? <br>
 
-:interrobang: Question 25 - What are some of the places or metrics that can be checked to determine if a bottleneck exists on a network? <br>
+:interrobang: Question 25 - What types of issues might present when using the wrong cable type for a high throughput communication line? <br>
 
 :interrobang: Question 26 - Enumerate possible interface configurations that can cause that interface to not work properly. <br>
 
