@@ -140,7 +140,7 @@ mike@Mikes-MacBook-Pro ~ % dig aol.com +short
 
 :interrobang: Question 30 - When a signal passes through an object and loses some of it's signal strength, we call it `____________`. <br>
 
-:interrobang: Question 31 - How does an AC's antenna effect a devices ability to connect to a network? <br>
+:interrobang: Question 31 - How does an AP's antenna effect a devices ability to connect to a network? <br>
 
 :interrobang: Question 32 - What causes device and bandwidth saturation? Device and bandwidth saturation is more likely to occur in what types of networking environments?  <br>
 
