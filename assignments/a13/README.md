@@ -40,15 +40,11 @@ The table of contents for this lab is found below.
 
 | Image G             |  Image H |
 :-------------------------:|:-------------------------:
-![](images/fig2.png)  |  ![](images/fig3.png)
-
-| Image I             |  Image J |
-:-------------------------:|:-------------------------:
 ![](images/fig7.png)  |  ![](images/fig8.png)
 
-| Image K             | 
+| Image I             |  
 :-------------------------:|
-<img src="images/fig9.png" width="500px"> |  
+!<img src="images/fig9.png" width=400px>  |  
 
 * Image A - 
 * Image B - 
@@ -59,8 +55,6 @@ The table of contents for this lab is found below.
 * Image G - 
 * Image H - 
 * Image I - 
-* Image J - 
-* Image K - 
 
 ## Part 3: Software Tools
 
